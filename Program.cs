@@ -2,6 +2,9 @@
 
 using UC9_Senai_EncodingBackEnd_SA2.Classes;
 using UC9_Senai_EncodingBackEnd_SA2.Extensions;
+// Criação de duas listas. Uma para Pessoa Jurídica e outra para Pessoa Física
+List<PessoaFisica> listaPessoaFisica = new List<PessoaFisica>();
+List<PessoaJuridica> listaPessoaJuridica = new List<PessoaJuridica>();
 
 var customer = new Customizacao();
 // *************************************************************************************************************** //
@@ -30,9 +33,7 @@ Console.Clear();
 
 // *************************************************************************************************************** //
 
-// Criação de duas listas. Uma para Pessoa Jurídica e outra para Pessoa Física
-List<PessoaFisica> listaPessoaFisica = new List<PessoaFisica>();
-List<PessoaJuridica> listaPessoaJuridica = new List<PessoaJuridica>();
+
 
 // Variável fora do loop receber a opção escolhida do usuário
 string opcaoEscolhaCategoria;
@@ -95,7 +96,7 @@ do
                 Console.WriteLine();
 
                 "\n1 - CADASTRAR PESSOA FÍSICA".WriteLine(ConsoleColor.Blue);
-                "\n2 - CONSULTAR CADASTRO PESSOA JURÍDICA".WriteLine(ConsoleColor.Blue);
+                "\n2 - CONSULTAR CADASTRO PESSOA FÍSICA".WriteLine(ConsoleColor.Blue);
                 "\n0 - VOLTAR AO MENU ANTERIOR".WriteLine(ConsoleColor.Blue);
 
                 opcaoCategoriaPessoaFisica = Console.ReadLine();
@@ -191,7 +192,7 @@ do
                         }
                         else
                         {
-                            Console.WriteLine("\nDigite apenas \"S\" para sim e \"N\" para não!!");
+                            Console.WriteLine("\nDigite \"S\" para sim e \"N\" para não!!");
                         }
                         // Condicional para testar tipo de endereço
 
@@ -202,23 +203,56 @@ do
                         novoCadastroPessoaFisica.Remuneracao = decimal.Parse(Console.ReadLine());
 
                         // Adicionando o objeto novoCadastroPessoaFisica à lista
-                        listaPessoaFisica.Add(metodoPessoaFisica);
-
-
-                        // ******** Espaço para gravar em arquivo ************* //
-                        using (StreamWriter escrever = new StreamWriter($"{novoCadastroPessoaFisica.Nome}.txt"))
-                        {
-                            escrever.WriteLine(novoCadastroPessoaFisica.Nome);
-                        }
+                        listaPessoaFisica.Add(novoCadastroPessoaFisica);
 
                         // Finalização do cadastro
                         "Cadastro realizado com sucesso!".WriteLine(ConsoleColor.Green);
+                        Thread.Sleep(3000);
+
+
+                        // ******** Espaço para gravar em arquivo ************* //
+                        //using (StreamWriter escrever = new StreamWriter($"{novoCadastroPessoaFisica.Nome}.txt"))
+                        //{
+                        //    escrever.WriteLine(novoCadastroPessoaFisica.Nome);
+                        //}
 
                         break;
                     case "2":
-                        // Acrescentar um foreach para listar Pessoa Física
+                        Console.Clear();
+                        if (listaPessoaFisica.Count > 0)
+                        {
+                            foreach (PessoaFisica apresentacaoPessoaFisica in listaPessoaFisica)
+                            {
+                                
+                                Console.WriteLine(@$"
+                                    CPF: {apresentacaoPessoaFisica.CPF}
+                                    Nome: {apresentacaoPessoaFisica.Nome}
+                                    Sobrenome:{apresentacaoPessoaFisica.Sobrenome}
+                                    Data de nascimento: {apresentacaoPessoaFisica.DataNascimento}
+                                    Endereço
+                                    Rua: {apresentacaoPessoaFisica.Endereco.NomeRua}
+                                    Nº: {apresentacaoPessoaFisica.Endereco.NumeroCasa}
+                                    Complemento: {apresentacaoPessoaFisica.Endereco.Complemento}
+                                    Tipo de endereço: {apresentacaoPessoaFisica.Endereco.Comercial}
+                                    Remuneração mensal: {apresentacaoPessoaFisica.Remuneracao}
+                                    Imposto a se pagar: {apresentacaoPessoaFisica.PagarImposto(apresentacaoPessoaFisica.Remuneracao).ToString("C")}
+                                    ");
+                                Console.WriteLine("Aperte Enter para continuar");
+                                Console.ReadLine();
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("Lista Vazia!");
+                            Thread.Sleep(3000);
+
+                        }
+
                         break;
                     case "0":
+                        Console.Clear();
+                        customer.BarraCarregamento("Aguarde", 300);
+                        Console.Clear();
                         break;
                     default:
                         Console.Clear();
@@ -274,9 +308,109 @@ do
                 switch (opcaoCategoriaPessoaJuridica)
                 {
                     case "1":
+                        // Primeira Instância de Pessoa Jurídica 
+                        var metodoPessoaJuridica = new PessoaJuridica();
+                        // Segundo instância de Pessoa Jurídica
+                        var novoCadastroPessoaJuridica = new PessoaJuridica();
+                        // Instância Endereço
+                        var enderecoPessoaJuridica = new Endereco();
+
+
+
+                        // Limpar para ficar organizado
+                        Console.Clear();
+                        "\nCADASTRO DE PESSOA FÍSICA ESCOLHIDO".WriteLine(ConsoleColor.Yellow);
+                        "\nPREENCHA SEUS DADOS PARA CONCLUIR O CADASTRO!".WriteLine(ConsoleColor.Blue);
+                        "\nAperte Enter para continuar!".WriteLine(ConsoleColor.White);
+                        Console.ReadKey(true);
+                        customer.BarraCarregamento("Carregando", 300);
+                        // Limpar para ficar organizado
+                        Console.Clear();
+
+                        // ***** Loop para estrutura de validação de cnpj ****** //
+                        do
+                        {
+                            Console.Write("\nCNPJ: ");
+                            string cnpj = Console.ReadLine();
+                            cnpjValidado = novoCadastroPessoaJuridica.ValidarCnpj(cnpj);
+                            // Condicional para atribuir á propriedade do objeto já com o cnpj validado
+                            if (cnpjValidado)
+                            {
+                                novoCadastroPessoaJuridica.CNPJ = cnpj;
+                            }
+                        }
+                        while (cnpjValidado == false);
+                        // ***** Loop para estrutura de validação de cnpj ****** //
+
+
+                        // Limpar para ficar organizado
+                        Console.Clear();
+                        Console.Write($"\nCNPJ: {novoCadastroPessoaJuridica.CNPJ} validado com sucesso!\n");
+
+
+                        // Continuação do preenchimento
+                        Console.Write("\nNome: ");
+                        novoCadastroPessoaJuridica.Nome = Console.ReadLine();
+                        Console.Write("\nSobrenome: ");
+                        novoCadastroPessoaJuridica.Sobrenome = Console.ReadLine();
+                        Console.Write("\nRazão Social: ");
+                        novoCadastroPessoaJuridica.RazaoSocial = Console.ReadLine();
+                        Console.Write("\nNome Fantasia: ");
+                        novoCadastroPessoaJuridica.NomeFantasia = Console.ReadLine();
+                        Console.WriteLine();
+                        Console.WriteLine("Espaço endereço");
+                        Console.Write("\nRua: ");
+                        enderecoPessoaJuridica.NomeRua = Console.ReadLine();
+                        Console.Write("\nNúmero: ");
+                        enderecoPessoaJuridica.NumeroCasa = int.Parse(Console.ReadLine());
+                        Console.Write("\nComplemento: ");
+                        enderecoPessoaJuridica.Complemento = Console.ReadLine();
+                        Console.Write("\nEndereço Comercial? Digite  Digite \"S\" para sim e \"N\" para não!!");
+                        string tipoEnderecoPessoaJuridica = Console.ReadLine().ToUpper(); 
+
+                        // Condicional para averiguar a entrada do tipo de endereço
+                        if (tipoEnderecoPessoaJuridica != "S" || tipoEnderecoPessoaJuridica != "N")
+                        {
+                            if (tipoEnderecoPessoaJuridica == "S")
+                            {
+                                enderecoPessoaJuridica.Comercial = true;
+                                Console.WriteLine("\nEndereço Comercial!");
+                            }
+                            else
+                            {
+                                enderecoPessoaJuridica.Comercial = false;
+                                Console.WriteLine("\nEndereço Residencial!");
+                            }
+                        }
+                        else
+                        {
+                            "\nDigite \"S\" para sim e \"N\" para não!!".WriteLine(ConsoleColor.DarkRed);
+                        }
+                        // Condicional para averiguar a entrada do tipo de endereço
+
+
+                        // Atribuição do objeto endereço Pessoa Jurídica ao novoCadastroPessoaJuridica
+                        novoCadastroPessoaJuridica.Endereco = enderecoPessoaJuridica;
+
+
+                        Console.WriteLine("\nRemuneração ou lucro mensal:!");
+                        novoCadastroPessoaJuridica.Remuneracao = decimal.Parse(Console.ReadLine());
+
+
+                        // Adiconando à lista de Pessoa Jurídica
+                        listaPessoaJuridica.Add(novoCadastroPessoaJuridica);
+
+
+
+                        "Cadastro realizado com sucesso!".WriteLine(ConsoleColor.Green);
+                        customer.BarraCarregamento("Aguarde um pouco", 300);
+
                         break;
+
                     case "2":
                         break;
+
+
                     case "0":
                     default:
                         Console.Clear();
@@ -289,7 +423,7 @@ do
             }
             while (opcaoCategoriaPessoaJuridica != "0");
             // ***************** Submenu CATEGORIA PESSOA JURÍDICA ************* //
-
+// ********************************************************************************************************************************* //
             break;
         case "0":
             break;
