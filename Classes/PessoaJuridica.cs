@@ -9,6 +9,7 @@ namespace UC9_Senai_EncodingBackEnd_SA2.Classes
         public string CNPJ { get; set; }
         public string RazaoSocial { get; set; }
         public string NomeFantasia { get; set; }
+        public string caminhoArquivo { get; private set; } = "Database/PessoaJuridica.csv";
 
         public override decimal PagarImposto(decimal remuneracao)
         {
@@ -66,5 +67,40 @@ namespace UC9_Senai_EncodingBackEnd_SA2.Classes
             }
             return false;
         }
+
+
+        // ******* Método para inserir os dados no arquivo, fazendo menção a um banco de dados. ********** //
+        public void Inserir(PessoaJuridica pj)
+        {
+            VerificarEcriarPastaArquivo(caminhoArquivo);
+            string[] pjString = {$"{pj.Nome}, {pj.CNPJ}, {pj.NomeFantasia}" };
+            File.AppendAllLines(caminhoArquivo, pjString);
+        }
+        // ******* Método para inserir os dados no arquivo, fazendo menção a um banco de dados. ********** //
+
+
+        // ******* Método para ler os dados cadastrados pelo usuário ********** //
+        public List<PessoaJuridica> Ler()
+        {
+            List<PessoaJuridica> listaPJ = new List<PessoaJuridica>();
+
+            string[] linhas = File.ReadAllLines(caminhoArquivo);
+
+            foreach  (string cadaLinha in linhas)
+            {
+                string[] atributos = cadaLinha.Split(",");
+
+                PessoaJuridica cadaPJ = new PessoaJuridica();
+
+                cadaPJ.Nome = atributos[0];
+                cadaPJ.CNPJ = atributos[1];
+                cadaPJ.NomeFantasia = atributos[2];
+
+                listaPJ.Add(cadaPJ);
+            }
+
+            return listaPJ;
+        }
+        // ******* Método para ler os dados cadastrados pelo usuário ********** //
     }
 }
