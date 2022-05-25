@@ -6,6 +6,7 @@ using UC9_Senai_EncodingBackEnd_SA2.Extensions;
 List<PessoaFisica> listaPessoaFisica = new List<PessoaFisica>();
 List<PessoaJuridica> listaPessoaJuridica = new List<PessoaJuridica>();
 
+// Instãncia para usar Barra de carregamento
 var customer = new Customizacao();
 // *************************************************************************************************************** //
 // Criar uma apresentação. Para isso, um loop
@@ -122,8 +123,8 @@ do
                         // Limpar para ficar organizado
                         Console.Clear();
 
-                    // **** Loop 'do while' para a estrura de validação do CPF **** //
-                    do
+                        // **** Loop 'do while' para a estrura de validação do CPF **** //
+                        do
                         {
                             Console.Write("\nCPF: ");
                             string cpf = Console.ReadLine();
@@ -134,7 +135,7 @@ do
                                 novoCadastroPessoaFisica.CPF = cpf;
                             }
                         }
-                    while (cpfValidado == false);
+                        while (cpfValidado == false);
                         // **** Loop 'do while' para a estrura de validação do CPF **** //
 
                         // Limpar para ficar organizado
@@ -201,52 +202,84 @@ do
 
                         Console.Write("\nRemuneração mensal: ");
                         novoCadastroPessoaFisica.Remuneracao = decimal.Parse(Console.ReadLine());
+                        decimal imposto = novoCadastroPessoaFisica.PagarImposto(novoCadastroPessoaFisica.Remuneracao);
 
                         // Adicionando o objeto novoCadastroPessoaFisica à lista
                         listaPessoaFisica.Add(novoCadastroPessoaFisica);
+
+
+
+                        // ********Espaço para gravar em arquivo ************* //
+                        using (StreamWriter pessoaFisicaCadastrada = new StreamWriter($"{novoCadastroPessoaFisica.Nome}.txt"))
+                        {
+                            if (listaPessoaFisica.Count > 0)
+                            {
+                                foreach (PessoaFisica item in listaPessoaFisica)
+                                {
+                                    pessoaFisicaCadastrada.WriteLine(@$"
+                                    CPF: {item.CPF}
+                                    Nome: {item.Nome}
+                                    Sobrenome: {item.Sobrenome}
+                                    Data de nascimento: {item.DataNascimento}
+                                    Endereço
+                                    Rua: {item.Endereco.NomeRua}
+                                    Nº: {item.Endereco.NumeroCasa}
+                                    Complemento: {item.Endereco.Complemento}
+                                    ");
+                                }
+                            }
+                        }
+
+
+
 
                         // Finalização do cadastro
                         "Cadastro realizado com sucesso!".WriteLine(ConsoleColor.Green);
                         Thread.Sleep(3000);
 
-
-                        // ******** Espaço para gravar em arquivo ************* //
-                        //using (StreamWriter escrever = new StreamWriter($"{novoCadastroPessoaFisica.Nome}.txt"))
-                        //{
-                        //    escrever.WriteLine(novoCadastroPessoaFisica.Nome);
-                        //}
-
                         break;
                     case "2":
                         Console.Clear();
-                        if (listaPessoaFisica.Count > 0)
+                        //if (listaPessoaFisica.Count > 0)
+                        //{
+                        //    foreach (PessoaFisica apresentacaoPessoaFisica in listaPessoaFisica)
+                        //    {
+
+                        //        Console.WriteLine(@$"
+                        //            CPF: {apresentacaoPessoaFisica.CPF}
+                        //            Nome: {apresentacaoPessoaFisica.Nome}
+                        //            Sobrenome:{apresentacaoPessoaFisica.Sobrenome}
+                        //            Data de nascimento: {apresentacaoPessoaFisica.DataNascimento}
+                        //            Endereço
+                        //            Rua: {apresentacaoPessoaFisica.Endereco.NomeRua}
+                        //            Nº: {apresentacaoPessoaFisica.Endereco.NumeroCasa}
+                        //            Complemento: {apresentacaoPessoaFisica.Endereco.Complemento}
+                        //            Tipo de endereço: {apresentacaoPessoaFisica.Endereco.Comercial}
+                        //            Remuneração mensal: {apresentacaoPessoaFisica.Remuneracao}
+                        //            Imposto a se pagar: {apresentacaoPessoaFisica.PagarImposto(apresentacaoPessoaFisica.Remuneracao).ToString("C")}
+                        //            ");
+                        //        Console.WriteLine("Aperte Enter para continuar");
+                        //        Console.ReadLine();
+                        //    }
+                        //}
+                        //else
+                        //{
+                        //    Console.WriteLine("Lista Vazia!");
+                        //    Thread.Sleep(3000);
+
+                        //}
+                        // ************************** código para ler ****************** //
+                        using (StreamReader lerCadastro = new StreamReader("Julio.txt"))
                         {
-                            foreach (PessoaFisica apresentacaoPessoaFisica in listaPessoaFisica)
+                            string linha;
+                            while ((linha = lerCadastro.ReadLine()) != null)
                             {
-                                
-                                Console.WriteLine(@$"
-                                    CPF: {apresentacaoPessoaFisica.CPF}
-                                    Nome: {apresentacaoPessoaFisica.Nome}
-                                    Sobrenome:{apresentacaoPessoaFisica.Sobrenome}
-                                    Data de nascimento: {apresentacaoPessoaFisica.DataNascimento}
-                                    Endereço
-                                    Rua: {apresentacaoPessoaFisica.Endereco.NomeRua}
-                                    Nº: {apresentacaoPessoaFisica.Endereco.NumeroCasa}
-                                    Complemento: {apresentacaoPessoaFisica.Endereco.Complemento}
-                                    Tipo de endereço: {apresentacaoPessoaFisica.Endereco.Comercial}
-                                    Remuneração mensal: {apresentacaoPessoaFisica.Remuneracao}
-                                    Imposto a se pagar: {apresentacaoPessoaFisica.PagarImposto(apresentacaoPessoaFisica.Remuneracao).ToString("C")}
-                                    ");
-                                Console.WriteLine("Aperte Enter para continuar");
-                                Console.ReadLine();
+                                Console.WriteLine(linha);
                             }
                         }
-                        else
-                        {
-                            Console.WriteLine("Lista Vazia!");
-                            Thread.Sleep(3000);
-
-                        }
+                        // ************************** código para ler ****************** //
+                        Console.WriteLine("Aperte 'Enter' para continuar");
+                        Console.ReadLine();
 
                         break;
                     case "0":
