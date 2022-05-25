@@ -299,6 +299,12 @@ do
 
             break;
         case "2":
+            // Primeira Instância de Pessoa Jurídica 
+            var metodoPessoaJuridica = new PessoaJuridica();
+            // Segundo instância de Pessoa Jurídica
+            var novoCadastroPessoaJuridica = new PessoaJuridica();
+            // Instância Endereço
+            var enderecoPessoaJuridica = new Endereco();
 
             // ***************** Submenu CATEGORIA PESSOA JURÍDICA ************* //
             do
@@ -341,12 +347,7 @@ do
                 switch (opcaoCategoriaPessoaJuridica)
                 {
                     case "1":
-                        // Primeira Instância de Pessoa Jurídica 
-                        var metodoPessoaJuridica = new PessoaJuridica();
-                        // Segundo instância de Pessoa Jurídica
-                        var novoCadastroPessoaJuridica = new PessoaJuridica();
-                        // Instância Endereço
-                        var enderecoPessoaJuridica = new Endereco();
+                       
 
 
 
@@ -433,6 +434,8 @@ do
                         // Adiconando à lista de Pessoa Jurídica
                         listaPessoaJuridica.Add(novoCadastroPessoaJuridica);
 
+                        metodoPessoaJuridica.Inserir(novoCadastroPessoaJuridica);
+
 
 
                         "Cadastro realizado com sucesso!".WriteLine(ConsoleColor.Green);
@@ -441,6 +444,25 @@ do
                         break;
 
                     case "2":
+                        Console.Clear();
+                        "Consulta de Cadastro".WriteLine(ConsoleColor.Magenta);
+                        // Lista de PessoaJuridica criada para receber o objeto e o método Ler
+                        List<PessoaJuridica> listaPj = metodoPessoaJuridica.Ler();
+
+                        // foreach em listaPJ para apresentar os dados cadastrados pelo usuário
+                        foreach (PessoaJuridica cadaItem in listaPj)
+                        {
+                            Console.WriteLine($@"
+                            Nome: {cadaItem.Nome}
+                            CNPJ: {cadaItem.CNPJ}
+                            Nome Fantasia: {cadaItem.NomeFantasia}
+                            ");
+
+                            Console.WriteLine("Aperte 'Enter' para continuar");
+                            Console.ReadLine();
+                        }
+                        // foreach em listaPJ para apresentar os dados cadastrados pelo usuário
+
                         break;
 
 
@@ -451,8 +473,6 @@ do
                         Thread.Sleep(2000);
                         break;
                 } // ***************** Switch case de pessoa jurídica ************* //
-
-
             }
             while (opcaoCategoriaPessoaJuridica != "0");
             // ***************** Submenu CATEGORIA PESSOA JURÍDICA ************* //
@@ -466,11 +486,5 @@ do
             Thread.Sleep(2000);
             break;
     } // ********* Switch case para execução de códigos conforme a escolha do usuário do primeiro MENU ************ //
-
-
-    
-
-
-
 } 
 while (opcaoEscolhaCategoria != "0");
