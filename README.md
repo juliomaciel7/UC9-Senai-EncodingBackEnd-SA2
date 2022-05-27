@@ -49,8 +49,7 @@ StreamWriter and StreamReader Classes
 - `Function 4`: Consult the Legal Entity registration
 - `Function 5`: Consult the register of Legal Entities
 
-![Visual Studio 2022](https://www.youtube.com/watch?v=9J1XmYCEhKE&ab_channel=JoqBayDeveloper)
-
+ ![Alt text](https://www.youtube.com/watch?v=9J1XmYCEhKE&ab_channel=JoqBayDeveloper "Optional title")
 ---
 ## :keyboard: Technologies Used
 
