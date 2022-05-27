@@ -55,10 +55,7 @@ StreamWriter and StreamReader Classes
  ![Alt text](../UC9-Senai-EncodingBackEnd-SA2/media/Funcionalidade4.gif)
 
 
-<<<<<<< HEAD
-=======
- ![Alt text](https://img.youtube.com/vi/9J1XmYCEhKE/0.jpg)]([https://www.youtube.com/watch?v=9J1XmYCEhKE](https://youtu.be/9J1XmYCEhKE)
->>>>>>> c489efdf96cd8da95bda741acb8d6a043e732476
+
 ---
 ## :keyboard: Technologies Used
 
@@ -97,5 +94,10 @@ Besides
 10% of the coding was done with Visual Studio Code, for quick testing purposes.
 
 ## Project Organization
+
++ `class folder`: UC9-Senai-EncodingBackEnd-SA2/Classes/
++ `Interface Folder`: UC9-Senai-EncodingBackEnd-SA2/Interfaces/
+
+
 
 ## under construction
