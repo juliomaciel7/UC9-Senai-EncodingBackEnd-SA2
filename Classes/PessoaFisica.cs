@@ -11,7 +11,22 @@ namespace UC9_Senai_EncodingBackEnd_SA2.Classes
 
         public override decimal PagarImposto(decimal remuneracao)
         {
-            return 0m;
+            if (remuneracao <= 1500)
+            {
+                return remuneracao; 
+            }
+            else if (remuneracao <= 3500)
+            {
+                return remuneracao * 0.03m; // Retorna 3%
+            }
+            else if (remuneracao <= 6000)
+            {
+                return remuneracao * 0.05m; // Retorna 3%
+            }
+            else
+            {
+                return remuneracao * 0.07m; // Retorna 7%
+            }
         }
 
         public bool ValidarCpf(string cpf)
