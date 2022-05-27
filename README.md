@@ -1,7 +1,7 @@
 # Customer Registration Project - Senai Informática
-<div align="center">
-<img alt="Projeto Console" src="/Images/ImagemRepositorioGitHub.png"
-</div>
+
+<img alt="Projeto Console" src="/Images/ImagemRepositorioGitHub.png">
+
 
 [![GitHub license](https://img.shields.io/github/license/juliomaciel7/UC9-Senai-EncodingBackEnd-SA2)](https://github.com/juliomaciel7/UC9-Senai-EncodingBackEnd-SA2/blob/main/LICENSE.txt)
 ![Visual Studio 2022](https://badgen.net/badge/icon/visualstudio?icon=visualstudio&label)
