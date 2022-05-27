@@ -1,4 +1,18 @@
 # Customer Registration Project - Senai Informática
+<div align="center">
+<img alt="Projeto Console" src="../UC9-Senai-EncodingBackEnd-SA2/Images/ImagemRepositorioGitHub.png"
+</div>
+
+[![GitHub license](https://img.shields.io/github/license/juliomaciel7/UC9-Senai-EncodingBackEnd-SA2)](https://github.com/juliomaciel7/UC9-Senai-EncodingBackEnd-SA2/blob/main/LICENSE.txt)
+![Visual Studio 2022](https://badgen.net/badge/icon/visualstudio?icon=visualstudio&label)
+[![made-for-VSCode](https://img.shields.io/badge/Made%20for-VSCode-1f425f.svg)](https://code.visualstudio.com/)
+[![.NET](https://img.shields.io/badge/--512BD4?logo=.net&logoColor=ffffff)](https://dotnet.microsoft.com/)
+![Terminal](https://badgen.net/badge/icon/terminal?icon=terminal&label)
+[![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+[![C# Discord](https://badgen.net/discord/members/csharp)](https://discord.gg/csharp)
+[![git](https://badgen.net/badge/icon/git?icon=git&label)](https://git-scm.com)
+[![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com)
+
 ---
 :rocket: *Description:*
 
@@ -23,6 +37,20 @@ StreamWriter and StreamReader Classes
 
 + StreamWriter object to write a file.
 + StreamReader object to read and display a file.
+
+:construction: Finished project :construction:
+
+---
+## :gear: Features :gear:
+
+- `Function 1`: Register Individuals
+- `Function 2`: Register Legal Entity
+- `Function 3`: Save entries in .csv files
+- `Function 4`: Consult the Legal Entity registration
+- `Function 5`: Consult the register of Legal Entities
+
+![Visual Studio 2022](https://www.youtube.com/watch?v=9J1XmYCEhKE&ab_channel=JoqBayDeveloper)
+
 ---
 ## :keyboard: Technologies Used
 
