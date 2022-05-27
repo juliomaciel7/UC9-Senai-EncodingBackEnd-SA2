@@ -43,19 +43,20 @@ StreamWriter and StreamReader Classes
 ---
 ## :gear: Features :gear:
 
-- `Function 1`: Register Individuals
+- `Function 1`: Register Individuals 
 - `Function 2`: Register Legal Entity
- ![Alt text](../UC9-Senai-EncodingBackEnd-SA2/media/Funcionalidade1e2.gif)
-
-- `Function 3`: Save entries in .csv files
-  ![Alt text](../UC9-Senai-EncodingBackEnd-SA2/media/Funcionalidade3.gif)
-
+- `Function 3`: Save entries in .csv files 
 - `Function 4`: Consult the Legal Entity registration
-- `Function 5`: Consult the register of Legal Entities
- ![Alt text](../UC9-Senai-EncodingBackEnd-SA2/media/Funcionalidade4.gif)
+- `Function 5`: Consult the register of Legal Entities 
+
+<<<<<<< HEAD
 
 
-
+=======
+![Alt text](/media/Funcionalidade1e2.gif)
+![Alt text](/media/Funcionalidade3.gif)
+![Alt text](/media/Funcionalidade4.gif)
+>>>>>>> 9db1b3dc397e702623275221cfcb1947c484746f
 ---
 ## :keyboard: Technologies Used
 
