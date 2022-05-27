@@ -90,12 +90,12 @@ Besides
 
 ## Project Organization
 
-+ `class folder`: <p><a href="/Classes/">Classes</a></p>
-+ `Interface Folder`: <p><a href="/Interfaces/">Classes</a></p>
-+ `Extensions Folder`: <p><a href="/Extensions/">Classes</a></p>
-+ `Images Folder`: <p><a href="/Images/">Classes</a></p>
-+ `Media Folder`: <p><a href="/media/">Classes</a></p>
-+ `Class Program`: <p><a href="/Program.cs/">Classes</a></p>
++ <p><a href="/Classes/">Classes</a></p>
++ <p><a href="/Interfaces/">Interfaces</a></p>
++ <p><a href="/Extensions/">Extension</a></p>
++ <p><a href="/Images/">Imanges</a></p>
++ <p><a href="/media/">Media</a></p>
++ <p><a href="/Program.cs/">Main Class</a></p>
 
 
 
