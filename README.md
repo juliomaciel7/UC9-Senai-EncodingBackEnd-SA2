@@ -1,6 +1,6 @@
-# Customer Registration Project - Senai Inform·tica
+# Customer Registration Project - Senai Inform√°tica
 <div align="center">
-<img alt="Projeto Console" src="../UC9-Senai-EncodingBackEnd-SA2/Images/ImagemRepositorioGitHub.png"
+<img alt="Projeto Console" src="/Images/ImagemRepositorioGitHub.png"
 </div>
 
 [![GitHub license](https://img.shields.io/github/license/juliomaciel7/UC9-Senai-EncodingBackEnd-SA2)](https://github.com/juliomaciel7/UC9-Senai-EncodingBackEnd-SA2/blob/main/LICENSE.txt)
