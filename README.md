@@ -90,9 +90,12 @@ Besides
 
 ## Project Organization
 
-+ `class folder`: <p><a href="/Classes/">Classes</a> has no
-title attribute.</p>
-+ `Interface Folder`: UC9-Senai-EncodingBackEnd-SA2/Interfaces/
++ `class folder`: <p><a href="/Classes/">Classes</a></p>
++ `Interface Folder`: <p><a href="/Interfaces/">Classes</a></p>
++ `Extensions Folder`: <p><a href="/Extensions/">Classes</a></p>
++ `Images Folder`: <p><a href="/Images/">Classes</a></p>
++ `Media Folder`: <p><a href="/media/">Classes</a></p>
++ `Class Program`: <p><a href="/Program.cs/">Classes</a></p>
 
 
 
