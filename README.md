@@ -90,7 +90,7 @@ Besides
 
 ## Project Organization
 
-+ `class folder`: <p><a href="UC9-Senai-EncodingBackEnd-SA2/Classes/">Classes</a> has no
++ `class folder`: <p><a href="/Classes/">Classes</a> has no
 title attribute.</p>
 + `Interface Folder`: UC9-Senai-EncodingBackEnd-SA2/Interfaces/
 
