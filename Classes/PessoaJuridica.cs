@@ -48,6 +48,7 @@ namespace UC9_Senai_EncodingBackEnd_SA2.Classes
             }
             else
             {
+
                 "Digite o CNPJ corretamente. Padrão: NN.NNN.NNN/0001-NN".WriteLine(ConsoleColor.DarkRed);
             }
 
