@@ -49,7 +49,7 @@ StreamWriter and StreamReader Classes
 - `Function 4`: Consult the Legal Entity registration
 - `Function 5`: Consult the register of Legal Entities
 
- [![Alt text](https://img.youtube.com/vi/9J1XmYCEhKE/0.jpg)]([https://www.youtube.com/watch?v=9J1XmYCEhKE](https://youtu.be/9J1XmYCEhKE))
+ ![Alt text](https://img.youtube.com/vi/9J1XmYCEhKE/0.jpg)]([https://www.youtube.com/watch?v=9J1XmYCEhKE](https://youtu.be/9J1XmYCEhKE)
 ---
 ## :keyboard: Technologies Used
 
