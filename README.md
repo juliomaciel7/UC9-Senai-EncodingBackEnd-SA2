@@ -125,7 +125,7 @@ Clone the project with the command below:
 ## Developers/Contributors :octocat:
 
 | [<img src="https://avatars.githubusercontent.com/juliomaciel7" width= 115><br><sub>Júlio Maciel</sub>](https://github.com/juliomaciel7) |  [<img src="https://avatars.githubusercontent.com/professorlozano" width=115><br><sub>Professor Lozano</sub>](https://github.com/professorlozano) |
-| :---: | :---: | :---:
+| :---: | :---:
 
 ---
 ## License
