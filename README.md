@@ -43,14 +43,17 @@ StreamWriter and StreamReader Classes
 ---
 ## :gear: Features :gear:
 
-- `Function 1`: Register Individuals 
+- `Function 1`: Register Individuals
 - `Function 2`: Register Legal Entity
-- `Function 3`: Save entries in .csv files 
+ ![Alt text](../UC9-Senai-EncodingBackEnd-SA2/media/Funcionalidade1e2.gif)
+
+- `Function 3`: Save entries in .csv files
+  ![Alt text](../UC9-Senai-EncodingBackEnd-SA2/media/Funcionalidade3.gif)
+
 - `Function 4`: Consult the Legal Entity registration
-- `Function 5`: Consult the register of Legal Entities 
-![Alt text](/media/Funcionalidade1e2.gif)
-![Alt text](/media/Funcionalidade3.gif)
-![Alt text](/media/Funcionalidade4.gif)
+- `Function 5`: Consult the register of Legal Entities
+ ![Alt text](../UC9-Senai-EncodingBackEnd-SA2/media/Funcionalidade4.gif)
+
 ---
 ## :keyboard: Technologies Used
 
@@ -89,14 +92,5 @@ Besides
 10% of the coding was done with Visual Studio Code, for quick testing purposes.
 
 ## Project Organization
-
-+ <p><a href="/Classes/">Classes</a></p>
-+ <p><a href="/Interfaces/">Interfaces</a></p>
-+ <p><a href="/Extensions/">Extension</a></p>
-+ <p><a href="/Images/">Imanges</a></p>
-+ <p><a href="/media/">Media</a></p>
-+ <p><a href="/Program.cs/">Main Class</a></p>
-
-
 
 ## under construction
