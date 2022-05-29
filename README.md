@@ -1,4 +1,4 @@
-# Customer Registration Project - Senai Informática
+# Customer Registration Project - SENAI
 
 <img alt="Projeto Console" src="/Images/ImagemRepositorioGitHub.png">
 
