@@ -45,14 +45,14 @@ StreamWriter and StreamReader Classes
 
 - `Function 1`: Register Individuals
 - `Function 2`: Register Legal Entity
- ![Alt text](../UC9-Senai-EncodingBackEnd-SA2/media/Funcionalidade1e2.gif)
-
 - `Function 3`: Save entries in .csv files
-  ![Alt text](../UC9-Senai-EncodingBackEnd-SA2/media/Funcionalidade3.gif)
-
 - `Function 4`: Consult the Legal Entity registration
 - `Function 5`: Consult the register of Legal Entities
- ![Alt text](../UC9-Senai-EncodingBackEnd-SA2/media/Funcionalidade4.gif)
+
+  ![Alt text](/media/Parte1GifConsole.gif)
+ ![Alt text](/media/Parte2GifConsole.gif)
+ ![Alt text](/media/Parte3GifConsole.gif)
+ 
 
 ---
 ## :keyboard: Technologies Used
@@ -110,14 +110,26 @@ Classe Program</a>.</p>
 
 ---
 
-## 📦️ Como rodar o projeto
-Clone o projeto com o comando abaixo:
+## 📦️ How to run the project
+Clone the project with the command below:
 ```bash
-  # Clone o repositório
+  # Clone the repository
   ❯ git clone https://github.com/juliomaciel7/UC9-Senai-EncodingBackEnd-SA2.git
-	# Entre no diretório
-  ❯ cd [nome-projeto]
-	# Execute o projeto
-  ❯ dotnet run
+	# Enter the directory
+   ❯ cd [project-name]
+# Run the project
+   ❯ dotnet run
+```
 ---
-## under construction
+
+## Developers/Contributors :octocat:
+
+| [<img src="https://avatars.githubusercontent.com/juliomaciel7" width= 115><br><sub>Júlio Maciel</sub>](https://github.com/juliomaciel7) |  [<img src="https://avatars.githubusercontent.com/professorlozano" width=115><br><sub>Professor Lozano</sub>](https://github.com/professorlozano) |
+| :---: | :---: | :---:
+
+---
+## License
+
+The [MIT License]() (MIT)
+
+Copyright :copyright: 2022 - Cadastro de Clientes
